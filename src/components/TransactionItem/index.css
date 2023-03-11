@@ -1,0 +1,31 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 15px;
+  border: solid black 1px;
+  margin-right: 20px;
+  padding-right: 40px;
+}
+.green {
+  background-color: #84cc16;
+}
+.blue {
+  background-color: #cffafe;
+}
+.violet {
+  background-color: #cffafe;
+}
+.image {
+  height: 50px;
+  margin-right: 10px;
+}
+.item-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,30 @@
+.form-title-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 16px;
+  font-family: 'Roboto';
+  border: solid #7e858e 1px;
+  padding: 20px;
+  border-radius: 5px;
+  margin-left: 0px;
+}
+.delete-button {
+  background-color: transparent;
+  border-width: 0px;
+}
+.delete-image {
+  height: 20px;
+}
+.history-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 16px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  border: solid #7e858e 1px;
+  padding: 20px;
+  border-radius: 5px;
+  list-style-type: none;
+}
