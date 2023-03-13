@@ -21,7 +21,7 @@ class MoneyManager extends Component {
   state = {
     title: '',
     type: 'Income',
-    amount: 0,
+    amount: '',
     historyList: instantHistoryItems,
     balance: 0,
     income: 0,
@@ -30,7 +30,7 @@ class MoneyManager extends Component {
 
   addHistory = event => {
     event.preventDefault()
-    const {title, type, amount, balance} = this.state
+    const {title, type, amount} = this.state
 
     const newHistory = {
       id: uuidv4(),
@@ -75,20 +75,26 @@ class MoneyManager extends Component {
 
   onRemoveItem = id => {
     const {historyList} = this.state
+    const RemovedList = historyList.filter(eachItem => eachItem.id === id)
+
     const filteredList = historyList.filter(eachItem => eachItem.id !== id)
     this.setState({historyList: filteredList})
+    if (RemovedList[0].type === 'Income') {
+      this.setState(prevState => ({
+        balance: prevState.balance - parseInt(RemovedList[0].amount),
+        income: prevState.income - parseInt(RemovedList[0].amount),
+      }))
+    }
+    if (RemovedList[0].type === 'Expenses') {
+      this.setState(prevState => ({
+        balance: prevState.balance - parseInt(RemovedList[0].amount),
+        expenses: prevState.expenses - parseInt(RemovedList[0].amount),
+      }))
+    }
   }
 
   render() {
-    const {
-      title,
-      type,
-      amount,
-      historyList,
-      balance,
-      income,
-      expenses,
-    } = this.state
+    const {title, amount, historyList, balance, income, expenses} = this.state
 
     return (
       <div className="app-container">

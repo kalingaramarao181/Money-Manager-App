@@ -9,7 +9,7 @@ const MoneyDetails = props => {
   }
 
   return (
-    <div className="history-card">
+    <li className="history-card">
       <p>{title}</p>
       <p>{amount}</p>
       <p>{type}</p>
@@ -25,7 +25,7 @@ const MoneyDetails = props => {
           alt="delete"
         />
       </button>
-    </div>
+    </li>
   )
 }
 export default MoneyDetails
